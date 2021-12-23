@@ -1,29 +1,12 @@
 <?php
-# $Id$
-# vim: ft=php
-#
-# Version: 0.4
-# Author: Marcin ``MySZ`` Sztolcman <marcin@urzenia.net>
-# Copyright: (r) 2008 - 2010
-# Program: wwwshell.php - shell access via browser
-# Date: 2010-10-24
-# License: GPL v.2
-
-
-# configuration
-# your home directory - if set to null, or this directory does not exists, we use value of getcwd() as home directory
 define ('HOME', null);
 
-# how many commands store in history
 define ('HISTORY_MAX', 30);
 
-# character set
 define ('CHARSET', 'UTF-8');
 
-# timezone
 define ('TIMEZONE', '');
 
-# your aliases
 $aliases = array (
     'll'    => 'ls -l',
     'la'    => 'ls -la',
@@ -36,17 +19,6 @@ $aliases = array (
     'gr'    => 'grep -ir',
 );
 
-## uncomment and fill only, if script can't find SCRIPT URI itself.
-# define ('SCRIPT_URI', 'https://example.com/f1/f2/wwwshell.php');
-
-
-# ##############################################################################
-# do not touch below this line - except you exactly now what are you doing...
-# ##############################################################################
-
-# putenv ('HOME='.HOME);
-# error_reporting (E_ALL | E_STRICT);
-# ini_set ('display_errors', 1);
 
 if (!function_exists ('proc_open')) {
     throw new RuntimeException ('Function proc_open () is disabled - script will never work. Contact with your system administrator to enable proc_open ().');
